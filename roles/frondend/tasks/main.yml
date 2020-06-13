@@ -52,6 +52,12 @@
     tag: "{{ tag_version }}"
   tags:
     - build
+
+- name: pull an image
+  docker_image:
+    name: "{{ dockerhub_login_vault }}/fake-backend-jenkins_cd:{{ tag_version }}"
+    source: pull
+  tags:
     - prod
 
 - name: container battlegame
