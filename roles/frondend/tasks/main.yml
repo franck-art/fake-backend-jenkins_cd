@@ -42,6 +42,7 @@
     password: "{{ dockerhub_pwd_vault }}"
   tags:
     - build
+    - prod
 
 - name: Build api image and push it to Docker Hub
   docker_image:
@@ -51,6 +52,7 @@
     tag: "{{ tag_version }}"
   tags:
     - build
+    - prod
 
 - name: container battlegame
   docker_container:
